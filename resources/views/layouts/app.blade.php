@@ -14,10 +14,26 @@
                 DevStagram
             </h1>
 
+
+            @auth
+            <nav class="flex gap-2 items-center">
+                <a class="font-bold text-gray-600 text-sm">
+                    HOLA: 
+                    <span class="font-normal"> 
+                    {{auth()->user()->username}}
+                    </span>
+                 </a>  
+                <a href="{{ route('logout') }}" class="font-bold uppercase text-gray-600 text-sm">
+                    Cerrar Sesíon</a>     
+            </nav>
+            @endauth
+
+            @guest
             <nav class="flex gap-2 items-center">
                 <a class="font-bold uppercase text-gray-600 text-sm" href="/login">Login</a>  
                 <a class="font-bold uppercase text-gray-600 text-sm" href="/crear-cuenta">Crear Cuenta</a>     
             </nav>
+            @endguest
         </div>
         </header>
 
