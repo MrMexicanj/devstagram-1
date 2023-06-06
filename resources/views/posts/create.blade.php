@@ -7,7 +7,8 @@
 @section('contenido')
     <div class="md:flex md:items-center">
         <div class="md:w-1/2 px-10">
-            imgen aqui
+            <form id="dropzone" class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center">
+        </form>
         </div>
 
         <div class="md:w-1/2 px-10 bg-slate-300 p-6 rounded-lg shadow-xl mt-10 md:mt-0">
