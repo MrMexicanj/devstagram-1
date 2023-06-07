@@ -4,12 +4,17 @@
     Crea una nueva Publicación
 @endsection
 
+@push('styles')
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+@endpush
+
 @section('contenido')
     <div class="md:flex md:items-center">
         <div class="md:w-1/2 px-10">
-            <form id="dropzone" class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center">
+            <form action="{{route('imagenes.store')}}" method="POST" enctype="multipart/form-data" id="dropzone" class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center">
+                @csrf
         </form>
-        </div>
+    </div>
 
         <div class="md:w-1/2 px-10 bg-slate-300 p-6 rounded-lg shadow-xl mt-10 md:mt-0">
             <form action="/crear-cuenta" method="POST" novalidate>
@@ -33,16 +38,16 @@
                 @enderror
         
                 <div class="mb-5">
-                <label for="descripcion" class="mb-2 block uppercase text-gray-500 font-bold">
-                    Descripcion
-                </label>
-                <textarea 
-                id="descripcion" 
-                name="descripcion" 
-                placeholder="Descripcion de la publicacion" 
-                class="border p-3 w-full rounded-lg @error('name') border-red-500
+                    <label for="descripcion" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Descripcion
+                    </label>
+                    <textarea 
+                    id="descripcion" 
+                    name="descripcion" 
+                    placeholder="Descripcion de la publicacion" 
+                    class="border p-3 w-full rounded-lg @error('name') border-red-500
                 @enderror"
-                >{{ old('titulo') }}</textarea>
+                >{{ old('descripcion') }}</textarea>
                 </div>
 
                 @error('titulo')

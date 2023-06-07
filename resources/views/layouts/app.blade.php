@@ -3,9 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        @stack('styles')
         <link href="{{ asset('css/app.css') }}" rel="stylesheets">
         <title>DevStagram - @yield('titulo')</title>
+        <script src="{{ asset('js/app.js')}}" defer></script>
         @vite('resources/css/app.css')
+        @vite('resources/js/app.js')
+
     </head>
     <body>
         <header class="p-5 border-b bg-white shadow">
@@ -18,6 +22,7 @@
             @auth
             <nav class="flex gap-2 items-center">
                 
+                <div class="flex items-center px-80">
                 <a class="flex items-center gap-2 bg-white border p-2 text-gray-600 rounded text-sm uppercase font-bold cursor-pointer" 
                 href="{{ route('posts.create')}}">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -26,6 +31,7 @@
                 </svg>
                     Crear
                 </a>
+                </div>
 
                 <a class="font-bold text-gray-600 text-sm">
                     HOLA: 
