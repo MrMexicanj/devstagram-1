@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 
 class ImagenController extends Controller
 {
-    public function store(){
-
-        return "desde imagen controller";
+    //almacenamiento de imagenes
+    public function store(Request $request){
+        //identificar el archivo que se sube en dropzone
+        $imagen = $request->file('file');
+        //convertimos el arrgelo $input a formato jason
+        return response()->json(['imagen'=>$imagen->extension()]);
     }
 }

@@ -3,13 +3,17 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        @stack('styles')
         <link href="{{ asset('css/app.css') }}" rel="stylesheets">
         <title>DevStagram - @yield('titulo')</title>
         <script src="{{ asset('js/app.js')}}" defer></script>
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
 
+        <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+
+        <!--- Styles --->
+        @stack('styles')
     </head>
     <body>
         <header class="p-5 border-b bg-white shadow">
