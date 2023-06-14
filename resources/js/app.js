@@ -13,9 +13,9 @@ const dropzone = new Dropzone('#dropzone', {
 });
 
 //Eventos de Dropzone
-/*+dropzone.on('sending', function(file, xhr, formdata){
-    console.log(file);
-});/** */
+dropzone.on('sending', function(file, xhr, formData){
+    console.log(formData);
+});
 
 //envio cuando hay error
 dropzone.on('success', function(file, response){
