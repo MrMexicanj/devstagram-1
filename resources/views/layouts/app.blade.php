@@ -19,8 +19,7 @@
             </h1>
             
             @auth
-            <nav class="flex gap-2 items-center">
-                
+            <nav class="flex gap-6 items-center">
                 <div class="flex items-center px-80">
                 <a class="flex items-center gap-2 bg-white border p-2 text-gray-600 rounded text-sm uppercase font-bold cursor-pointer" 
                 href="{{ route('posts.create')}}">
