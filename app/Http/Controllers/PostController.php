@@ -36,6 +36,13 @@ class PostController extends Controller
             'imagen' => 'required'
         ]);
 
+        /**$request->user()->posts()->create([
+            'titulo' => $request->titulo,
+            'descripcion' => $request->descripcion,
+            'imagen' => $request->imagen,
+            'user_id' => auth()->user()->id
+        ]);*/
+
         Post::create([
             'titulo' => $request->titulo,
             'descripcion' => $request->descripcion,
@@ -44,6 +51,13 @@ class PostController extends Controller
         ]);
         
         return redirect()->route('posts.index', auth()->user()->username);
+    }
+
+    public function show(User $user, Post $post)
+    {
+        return view('posts.show',[
+            'post' => $post
+        ]);
     }
 }
 
