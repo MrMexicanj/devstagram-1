@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    {{ auth()->user()->username }}
+    Perfil:{{ $user->username }}
 @endsection
 
 
@@ -12,7 +12,7 @@
             <img src="{{ asset('Materiales DevStagram/Diseño/usuario.svg')}}" alt="Imagen usuario"/>
          </div>
         <div class="md:w-8/12 lg:w-6/12 px-5 flex flex-col items-center md:justify-center  md:items-start py-10 md:py-10">
-            <p class="text-gray-700 text-2xl">{{ auth()->user()->username }}</p>
+            <p class="text-gray-700 text-2xl">{{ $user->username }}</p>
 
             <!----- Agregamos estructura base para dashboard de publicaciones--->
             <p class="text-gray-800 text-sm mb-3 font-bold mt-5">

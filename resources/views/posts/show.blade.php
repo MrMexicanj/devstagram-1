@@ -44,7 +44,7 @@
                 <p class="text-xl font-bold text-center mb-4">Agrega un comentario</p>
 
                 @if (session('mensaje'))
-                    <div class="bg-green-500 p-2 rounded-lg mb-6 text-white text-center uppercase font-bold">
+                    <div class=" bg-green-600 text-white rounded-lg text-center mb-6 p-2 uppercase font-bold">
                         {{ session('mensaje') }}
                     </div>
                 @endif
@@ -77,7 +77,7 @@
 
                 @endauth
 
-                <div class="bg-white shadow mb-5 max-h-96 overflow-y-scroll">
+                <div class="bg-white shadow mb-5 max-h-96 overflow-y-scroll my-2">
                     @if ($post->comentarios->count())
                         @foreach ( $post->comentarios as $comentario )
                             <div class="p-5 border-gray-300 border-b">

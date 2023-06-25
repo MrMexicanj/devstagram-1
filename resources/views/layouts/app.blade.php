@@ -31,7 +31,7 @@
                 </a>
                 </div>
 
-                <a class="font-bold text-gray-600 text-sm">
+                <a href="{{ route('posts.index', auth()->user()->username) }}" class="font-bold text-gray-600 text-sm">
                     HOLA: 
                     <span class="font-normal"> 
                     {{auth()->user()->username}}
