@@ -7,6 +7,7 @@
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-8 md:items-center">
         <div class="md:w-6/12 p-2">
+            <!-- insertar imagen utilizando "asset" (acceder a la carpeta public)-->
             <img src="{{ asset('Materiales DevStagram/Diseño/login.jpg') }}" alt="Imagen login de usuarios">
          </div>
          <div class="md:w-1/2 bg-slate-300 p-6 rounded-lg shadow-xl">

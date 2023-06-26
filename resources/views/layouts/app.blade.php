@@ -11,16 +11,18 @@
         @vite('resources/js/app.js')
 
     </head>
-    <body>
+    <body class="bf-gray-100">
+        <!-- Encabezado de la pagina -->
         <header class="p-5 border-b bg-white shadow">
             <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-3xl font-black">
                 DevStagram
             </h1>
-            
+            <!-- Aplicar helper de autenticacion auth para verificar si esta autenticado -->
             @auth
             <nav class="flex gap-6 items-center">
                 <div class="flex items-center px-80">
+                <!-- Vinculo del boton para publicar Post -->
                 <a class="flex items-center gap-2 bg-white border p-2 text-gray-600 rounded text-sm uppercase font-bold cursor-pointer" 
                 href="{{ route('posts.create')}}">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -37,11 +39,13 @@
                     {{auth()->user()->username}}
                     </span>
                  </a>  
+                 <!-- lo renvia a la vista login -->
                 <a href="{{ route('logout') }}" class="font-bold uppercase text-gray-600 text-sm">
-                    Cerrar Sesíon</a>     
+                    Cerrar Sesíon
+                </a>     
             </nav>
             @endauth
-
+            <!-- Determinar ausuario no autenticado -->
             @guest
             <nav class="flex gap-2 items-center">
                 <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('login')}}">Login</a>  
@@ -50,14 +54,14 @@
             @endguest
         </div>
         </header>
-
+        <!-- contenido para cada una de las vistas -->
         <main class="container mx-auto mt-10">
             <h2 class="font-black text-center text-3xl mb-10">
                 @yield('titulo')
             </h2>
             @yield('contenido')
         </main>
-
+        <!-- Pie de paguna -->
         <footer class="mt-10 text-center p-5 text-gray-500 font-bold">
             DevStagram - Todos los derechos reservados {{ now()->year }}
         </footer>

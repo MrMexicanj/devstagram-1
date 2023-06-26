@@ -23,6 +23,7 @@
 
             <div class="text-center">
                 @auth
+                <!-- Muestra un boton de "eliminar" solo al usuario propietario de la publicacion -->
                     @if ($post->user_id === auth()->user()->id)
                     <form method="POST" action="{{ route('posts.destroy', $post) }}">
                         @method('DELETE')
@@ -43,6 +44,7 @@
                 @auth
                 <p class="text-xl font-bold text-center mb-4">Agrega un comentario</p>
 
+                <!-- Muestra un mensaje de creacion de comenatrio -->
                 @if (session('mensaje'))
                     <div class=" bg-green-600 text-white rounded-lg text-center mb-6 p-2 uppercase font-bold">
                         {{ session('mensaje') }}
@@ -76,7 +78,7 @@
                 </form>
 
                 @endauth
-
+                <!-- Muestra los comenatrios de la publicacion -->
                 <div class="bg-white shadow mb-5 max-h-96 overflow-y-scroll my-2">
                     @if ($post->comentarios->count())
                         @foreach ( $post->comentarios as $comentario )

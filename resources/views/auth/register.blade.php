@@ -7,6 +7,7 @@
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-8 md:items-center">
         <div class="md:w-6/12 p-2">
+            <!-- insertar imagen utilizando "asset" (acceder a la carpeta public) -->
             <img src="{{ asset('Materiales DevStagram/Diseño/registrar.jpg') }}" alt="Imagen registro">
          </div>
          <div class="md:w-1/2 bg-slate-300 p-6 rounded-lg shadow-xl">
@@ -25,6 +26,7 @@
                     @enderror"
                     value="{{ old('name') }}"/>
                 </div>
+                <!-- Directiva para mostrar mensaje de error -->
                 @error('name')
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                 @enderror

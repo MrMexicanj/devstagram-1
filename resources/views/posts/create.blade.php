@@ -6,6 +6,7 @@
 
 <!--- Directiva para integrar los estilos de Dropzone --->
 @push('styles')
+    <!-- Estilo de Dropzone -->
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 @endpush
 
